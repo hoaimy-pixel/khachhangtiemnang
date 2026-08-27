@@ -36,24 +36,30 @@ if login:
 
         st.success("Đăng nhập thành công!")
 
-        conn = get_connection()
+        try:
 
-        sql = """
-        SELECT *
-        FROM khachhang_tiemnang
-        ORDER BY id DESC
-        """
+            conn = get_connection()
 
-        df = pd.read_sql(sql, conn)
+            sql = """
+            SELECT *
+            FROM khach_hang_tiem_nang
+            ORDER BY id DESC
+            """
 
-        conn.close()
+            df = pd.read_sql(sql, conn)
 
-        st.subheader("Danh sách khách hàng tiềm năng")
+            conn.close()
 
-        st.dataframe(
-            df,
-            use_container_width=True
-        )
+            st.subheader("Danh sách khách hàng tiềm năng")
+
+            st.dataframe(
+                df,
+                use_container_width=True
+            )
+
+        except Exception as e:
+
+            st.error(f"Lỗi: {e}")
 
     else:
 
