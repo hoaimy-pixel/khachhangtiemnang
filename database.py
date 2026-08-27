@@ -15,7 +15,7 @@ def get_connection():
 
         database="company",
 
-        ssl={"ssl_mode": "REQUIRED"}
+        ssl={"ca": "ca.pem"}
 
     )
 
