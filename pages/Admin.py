@@ -40,7 +40,7 @@ if login:
 
         sql = """
         SELECT *
-        FROM dangky_dulich
+        FROM khachhang_tiemnang
         ORDER BY id DESC
         """
 
@@ -48,7 +48,7 @@ if login:
 
         conn.close()
 
-        st.subheader("Danh sách nhân viên đăng ký")
+        st.subheader("Danh sách khách hàng tiềm năng")
 
         st.dataframe(
             df,
