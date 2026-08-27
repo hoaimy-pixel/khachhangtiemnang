@@ -136,7 +136,7 @@ if submit:
         st.warning("⚠️ Vui lòng nhập số điện thoại.")
 
     else:
-try:
+        try:
 
             conn = get_connection()
             cursor = conn.cursor()
