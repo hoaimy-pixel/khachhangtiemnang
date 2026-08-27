@@ -15,9 +15,7 @@ def get_connection():
 
         database="company",
 
-        ssl={
-            "ca": "ca.pem"
-        }
+        ssl={"ca": "ca.pem"}
 
     )
 
